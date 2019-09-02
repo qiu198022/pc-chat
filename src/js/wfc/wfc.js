@@ -3,7 +3,7 @@ import Message from '../wfc/messages/message';
 import Conversation from '../wfc/model/conversation';
 import ConversationInfo from '../wfc/model/conversationInfo';
 import { EventEmitter } from 'events';
-import EventType from './wfcEvent'
+import EventType from './wfcEvent';
 import UserInfo from '../wfc/model/userInfo';
 import NullUserInfo from '../wfc/model/nullUserInfo';
 import NullGroupInfo from './model/nullGroupInfo';
@@ -569,6 +569,7 @@ class WfcManager {
     }
 
     async modifyGroupAlias(groupId, alias, lines, notifyMessageContent, successCB, failCB) {
+
         let payload = '';
         if (notifyMessageContent) {
             payload = JSON.stringify(notifyMessageContent.encode());
